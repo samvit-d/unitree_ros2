@@ -29,6 +29,6 @@ ENV CC=/usr/bin/clang-18
 ENV CXX=/usr/bin/clang++-18
 
 WORKDIR /workspace
-RUN echo "source /opt/ros/humble/setup.sh" >> ~/.zshrc 
+RUN echo "source /opt/ros/humble/setup.sh" >> ~/.bashrc 
 RUN apt update && apt install -y ros-humble-rmw-cyclonedds-cpp ros-humble-rosidl-generator-dds-idl
-CMD [ "zsh" ]
+CMD [ "bash" ]
