@@ -11,6 +11,11 @@ RUN ./install.sh
 RUN git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions && \
     apt install zsh-syntax-highlighting
 
+# Install Claude Code
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
+    apt-get install -y nodejs
+RUN npm install -g @anthropic-ai/claude-code
+
 # configure zsh
 RUN echo 'export ZSH=$HOME/.oh-my-zsh' >> ~/.zshrc && \
     echo 'ZSH_THEME="ys"' >> ~/.zshrc && \
